@@ -1,19 +1,10 @@
 <!doctype html>
 <html>
 <head>
-<?php
-    $builder_state_arr = array('AL'=>"Alabama",'AK'=>"Alaska",'AZ'=>"Arizona",'AR'=>"Arkansas",'CA'=>"California",'CO'=>"Colorado",'CT'=>"Connecticut",'DE'=>"Delaware",'DC'=>"District Of Columbia",'FL'=>"Florida",'GA'=>"Georgia",'HI'=>"Hawaii",'ID'=>"Idaho",'IL'=>"Illinois", 'IN'=>"Indiana", 'IA'=>"Iowa",  'KS'=>"Kansas",'KY'=>"Kentucky",'LA'=>"Louisiana",'ME'=>"Maine",'MD'=>"Maryland", 'MA'=>"Massachusetts",'MI'=>"Michigan",'MN'=>"Minnesota",'MS'=>"Mississippi",'MO'=>"Missouri",'MT'=>"Montana",'NE'=>"Nebraska",'NV'=>"Nevada",'NH'=>"New Hampshire",'NJ'=>"New Jersey",'NM'=>"New Mexico",'NY'=>"New York",'NC'=>"North Carolina",'ND'=>"North Dakota",'OH'=>"Ohio",'OK'=>"Oklahoma", 'OR'=>"Oregon",'PA'=>"Pennsylvania",'RI'=>"Rhode Island",'SC'=>"South Carolina",'SD'=>"South Dakota",'TN'=>"Tennessee",'TX'=>"Texas",'UT'=>"Utah",'VT'=>"Vermont",'VA'=>"Virginia",'WA'=>"Washington",'WV'=>"West Virginia",'WI'=>"Wisconsin",'WY'=>"Wyoming");
-    
 
-    function showOptionsDrop($array){
-        $string = '';
-        foreach($array as $k => $v){
-            $string .= '<option value="'.$k.'"'.$s.'>'.$v.'</option>'."\n";
-        }
-        return $string;
-    }
-
-?>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript" src="builder_form.js"></script>
+<?php require 'form-functions.php';?>
 
 
 <meta charset="utf-8">
@@ -26,7 +17,7 @@
 <blockquote>
   <h1 id="Title"> 	Preferred Builder Questionnaire</h1>
 </blockquote>
-<form id="builder_form_1" name="builder_form_1" method="post">
+<form id="builder_form" name="builder_form" role="form" method="post" action="builder_form.php">
   <table width="92%" border="0" cellpadding="3">
     <tbody>
       <tr>
