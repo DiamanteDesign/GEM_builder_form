@@ -1,0 +1,27 @@
+select.form-control { width: auto; padding: 4px 8px; }
+
+select.form-control option { padding-left:2px; }
+
+input#company_zip4 {
+  width:5em;
+  padding-right: 1em;
+  padding-left: 1em;
+}
+
+input#company_zip {
+  width:6em;
+  padding-right: 1em;
+  padding-left: 1em;
+}
+
+
+.single-ch-addon {
+  width: auto;
+  max-width: 2em;
+  position: relative;
+  float: left;
+  min-height: 1px;
+  padding-right: 0.5em;
+  padding-left: 0.5em;
+
+}
