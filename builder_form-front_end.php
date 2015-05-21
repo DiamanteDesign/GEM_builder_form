@@ -15,185 +15,206 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script type="text/javascript" src="builder_form.js"></script>
 <link rel="stylesheet" type="text/css" href="builder_form.css" />
-<?php require 'form-functions.php';?>
+<?php 
+    require 'form-functions.php';
+   // require_once 'builder-form.php';
+?>
 </head>
 
 <body>
-
 <div class="container">
-<form id="builder-form" class="form-horizontal" role="form" name="builder-form" method="post" action="builder_form.php">
+<form id="builder-form" class="form-horizontal" role="form" name="builder-form" method="post" action="builder_form.php<?php /*echo htmlspecialchars($_SERVER['PHP_SELF']);*/?>">
+
+
 <legend id="builder-form-title" class="form-title"><h1>Preferred Builder Questionnaire</h1></legend>
 <fieldset>
+
     <legend><h3>I. General Information</h3></legend>
 
 <!-- Company Name -->
 
 <div class="form-group">
-  <label class="control-label col-lg-2 col-sm-3" for="company_name">Company Name</label>
-  <input id="company_name" name="company_name" class="field-input col-sm-4" required type="text">
+  <label class="control-label col-sm-3" for="builder_name">Company Name</label>
+  <div class="field-input col-lg-4 col-sm-6">
+    <input id="builder_name" name="builder_name" class="form-control" type="text" maxsize="5">
+  </div>
 </div>
 
 <!-- Entity -->
 
 <div class="form-group">
-  <label class="radio control-label col-lg-2 col-sm-3" for="company_type">Entity</label>
-    <div class="radio field-input col-lg-offset-2 col-md-offset-3">
-      <label for="company_type-0">
-        <input name="company_type" id="company_type-0" value="Sole Proprietorship" checked="checked" type="radio">
-        Sole Proprietorship
+  <label class="control-label col-sm-3" for="builder_type">Entity</label>
+<div class="col-sm-6">
+    <div class="radio form-control">
+      <label for="builder_type-0">
+          <input name="builder_type" id="builder_type-0" value="Sole Proprietorship" checked="checked" type="radio">
+          Sole Proprietorship
       </label>
     </div>
-    <div class="radio field-input col-lg-offset-2 col-sm-offset-3">
-      <label for="company_type-1">
-        <input name="company_type" id="company_type-1" value="General Partnership" type="radio">
+    <div class="radio form-control field-input">
+      <label for="builder_type-1">
+        <input name="builder_type" id="builder_type-1" value="General Partnership" type="radio">
         General Partnership
       </label>
     </div>
-    <div class="radio field-input col-lg-offset-2 col-sm-offset-3">
-      <label for="company_type-2">
-        <input name="company_type" id="company_type-2" value="LLC" type="radio">
+    <div class="radio form-control field-input">
+      <label for="builder_type-2">
+        <input name="builder_type" id="builder_type-2" value="LLC" type="radio">
         LLC
       </label>
     </div>
-    <div class="radio field-input col-lg-offset-2 col-sm-offset-3">
-      <label for="company_type-3">
-        <input name="company_type" id="company_type-3" value="LLP" type="radio">
+    <div class="radio form-control field-input">
+      <label for="builder_type-3">
+        <input name="builder_type" id="builder_type-3" value="LLP" type="radio">
         LLP
       </label>
     </div>
-    <div class="radio field-input col-lg-offset-2 col-sm-offset-3">
-      <label for="company_type-4">
-        <input name="company_type" id="company_type-4" value="C Corporation" type="radio">
-        C Corporation
+    <div class="radio form-control field-input">
+      <label for="builder_type-4">
+          <input name="builder_type" id="builder_type-4" value="C Corporation" type="radio">
+          C Corporation
       </label>
     </div>
+
+</div>
 </div>
 
 <!-- Company Address 1 -->
 
 <div class="form-group">
-  <label class="control-label col-lg-2 col-sm-3" for="company-address1">Company Address</label>
-  <div class="field-input">
-    <input id="company-address1" name="company-address1" class="col-sm-4" type="text">
+  <label class="control-label col-sm-3" for="builder_address_1">Company Address</label>
+  <div class="field-input col-sm-6">
+    <input id="builder_address_1" name="builder_address_1" class="form-control" class="col-sm-4" type="text">
   </div>
 </div>
 
 <!-- Company Address 2 -->
 
 <div class="form-group">
-<label class="control-label col-lg-2 col-sm-3" for="company-address2"></label>
-  <div class="field-input">
-    <input id="company-address2" name="company-address2" class="col-sm-4" required type="text">
+<label class="control-label col-sm-3" for="builder_address_2"></label>
+  <div class="field-input col-sm-6">
+    <input id="builder_address_2" name="builder_address_2" class="form-control" class="col-sm-4" type="text">
   </div>
 </div>
 
 <!-- City -->
 
 <div class="form-group">
-  <label class="control-label col-lg-2 col-sm-3" for="company_city">City</label>
-  <div class="field-input">
-    <input id="company_city" name="company_city" class="col-sm-3" type="text">
+  <label class="control-label col-sm-3" for="builder_city">City</label>
+  <div class="field-input col-sm-6">
+    <input id="builder_city" name="builder_city" class="form-control" class="col-sm-3" type="text">
   </div>
 </div>
 
 <!-- State -->
 
 <div class="form-group">
-  <label class="control-label col-lg-2 col-sm-3" for="company_state">State</label>
-  <div class="field-input">
-    <?php statedropdown("company_state");?>
+  <label class="control-label col-sm-3" for="builder_state">State</label>
+  <div class="field-input col-sm-6">
+    <?php statedropdown("builder_state");?>
   </div>
 </div>
 
 <!-- Zip -->
 
 <div class="form-group">
-  <label class="control-label col-lg-2 col-sm-3" for="company_zip">Zip</label>
-  <div class="field-input">
-    <input id="company_zip" name="company_zip" class="col-xs-1" type="text" size="5">
+  <label class="control-label col-sm-3" for="builder_zip">Zip</label>
+  <div class="input-group">
+    <div class="field-input field-input-zip5">
+      <input id="builder_zip" name="builder_zip" class="form-control zip5" type="text" size="5">
+    </div>
     <div class="single-ch-addon">-</div>
-    <input id="company_zip4" name="company_zip4" class="col-xs-1" placeholder="0000" type="text">
+    <div class="field-input field-input-zip4">
+      <input id="builder_zip4" name="builder_zip4" class="form-control zip4" placeholder="0000" type="text">
+    </div>
   </div>
 </div>
 
 <!-- Principal Officer -->
 
 <div class="form-group">
-  <label class="control-label col-lg-2 col-sm-3" for="principal_officer">Principal Officer</label>
-  <div class="field-input">
-    <input id="principal_officer" name="principal_officer" class="input-xlarge" type="text">
+  <label class="control-label col-sm-3" for="builder_principal_officer">Principal Officer</label>
+  <div class="field-input col-sm-6">
+    <input id="builder_principal_officer" name="builder_principal_officer" class="form-control" class="input-xlarge" type="text">
   </div>
 </div>
 
 <!-- Business Phone -->
 
 <div class="form-group">
-  <label class="control-label col-lg-2 col-sm-3" for="business_phone">Business Phone</label>
-  <div class="field-input">
-    <input id="business_phone" name="business_phone" placeholder="" class="input-xlarge input-textfield-tel" type="tel">
+  <label class="control-label col-sm-3" for="builder_business_phone">Business Phone</label>
+  <div class="field-input col-sm-6">
+    <input id="builder_business_phone" name="builder_business_phone" class="form-control" class="input-xlarge input-textfield-tel" type="tel">
   </div>
 </div>
 
 <!-- Cell Phone -->
 
 <div class="form-group">
-  <label class="control-label col-lg-2 col-sm-3" for="cell_phone">Cell Phone</label>
-  <div class="field-input">
-    <input id="cell_phone" name="cell_phone" class="input-textfield-tel" type="tel">
+  <label class="control-label col-sm-3" for="builder_cell_phone">Cell Phone</label>
+  <div class="field-input col-sm-6">
+    <input id="builder_cell_phone" name="builder_cell_phone" class="form-control" type="tel">
   </div>
 </div>
 
 <!-- Fax -->
 
 <div class="form-group">
-  <label class="control-label col-lg-2 col-sm-3" for="fax">Fax</label>
-  <div class="field-input">
-    <input id="fax" name="fax" class="input-textfield-tel" type="tel">
+  <label class="control-label col-sm-3" for="builder_fax">Fax</label>
+  <div class="field-input col-sm-6">
+    <input id="builder_fax" name="builder_fax" class="form-control" type="tel">
   </div>
 </div>
 
 <!-- Email -->
 
 <div class="form-group">
-  <label class="control-label col-lg-2 col-sm-3" for="email">Email</label>
-  <div class="field-input">
-    <input id="email" name="email" class="input-textfield-email" type="email">
+  <label class="control-label col-sm-3" for="builder_email">Email</label>
+  <div class="field-input col-sm-6">
+    <input id="builder_email" name="builder_email" class="form-control" type="email">
   </div>
 </div>
 
 <!-- Url -->
 
 <div class="form-group">
-  <label class="control-label col-lg-2 col-sm-3" for="url">Website URL</label>
-  <div class="field-input">
-    <input id="url" name="url" class="input-textfield-url" type="url">
+  <label class="control-label col-sm-3" for="builder_url">Website URL</label>
+  <div class="field-input col-sm-6">
+    <input id="builder_url" name="builder_url" class="form-control" type="url">
   </div>
 </div>
 
 <!-- Social Security Number -->
-
+<!--
     <div class="form-group">
-  <label class="control-label col-lg-2 col-sm-3" for="ssn">Social Security No.</label>
-  <div class="field-input">
-    <input id="ssn" name="ssn" class="input-medium" type="text">
+  <label class="control-label col-lg-2 col-sm-3" for="builder_ssn">Social Security No.</label>
+  <div class="field-input col-lg-4 col-sm-4">
+    <input id="builder_ssn" name="builder_ssn" class="form-control" type="text">
   </div>
-</div>
+</div>-->
 
 <!-- Tax ID -->
-
+<!--
 <div class="form-group">
-  <label class="control-label col-lg-2 col-sm-3" for="taxid">Tax ID</label>
-  <div class="field-input">
-    <input id="taxid" name="taxid" class="input-medium" type="url">
+  <label class="control-label col-lg-2 col-sm-3" for="builder_taxid">Tax ID</label>
+  <div class="field-input col-lg-4 col-sm-4">
+    <input id="builder_taxid" name="builder_taxid" class="form-control" type="text">
   </div>
 </div>
+-->
+<div class='actions'>
+	<input name='action' type='submit' value='Continue'>
+</div>
+
+
+
 
 
 <fieldset>
     <legend><h3>II. Green Building Certifications - Experience</h3></legend>
 
 
-<!-- Green Building Certification-Training -->
+<!-- Green Building Certification-Training --
 
 <div class="form-group">
   <label class="control-label col-sm-3" for="green-training">Green Building Certification-Training</label>
@@ -869,9 +890,12 @@ Current Highest HERS Index Achieved </strong>:</td>
         <td align="right" id="specs3">&nbsp;</td>
         <td colspan="6" align="left">&nbsp;</td>
       </tr>
-
+-->
 
 </div>
+
+
+
 </form>
 </div>
 </body>
